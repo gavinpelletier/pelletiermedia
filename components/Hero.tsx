@@ -16,11 +16,6 @@ export function Hero() {
             Independent Automation Operator & Builder
           </p>
         </Reveal>
-        <Reveal className="mb-5">
-          <p className="headline text-3xl leading-none text-ink/90 sm:text-4xl">
-            Gavin Pelletier
-          </p>
-        </Reveal>
         <Reveal as="h1" className="headline max-w-4xl text-5xl leading-[0.98] text-ink sm:text-6xl lg:text-7xl">
           Automation systems for people who move faster than their operations.
         </Reveal>

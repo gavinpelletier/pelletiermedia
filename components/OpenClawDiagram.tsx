@@ -32,7 +32,7 @@ export function OpenClawDiagram() {
         <Reveal>
           <SectionBadge>OpenClaw</SectionBadge>
           <h2 className="headline max-w-3xl text-4xl leading-tight text-ink sm:text-5xl">
-            OpenClaw is the leverage engine.
+            OpenClaw turns operating context into action.
           </h2>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">
             OpenClaw connects AI agents, automation pipelines, memory, tools, and execution logic. It is built around a simple belief: AI is only useful when it can take context, make decisions, and move work forward.

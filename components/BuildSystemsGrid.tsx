@@ -21,7 +21,7 @@ const systems = [
   ["Data-to-Action Loops", "Turn raw inputs into alerts, decisions, reports, and follow-up actions.", DatabaseZap],
   ["Lead Routing", "Capture, qualify, organize, and route leads before they go cold.", Route],
   ["Sourcing Checks", "Evaluate suppliers, quotes, freight, risks, margins, and viability faster.", Handshake],
-  ["Automated Profitability Studies", "Compare costs, prices, fees, margins, and scenarios before decisions get expensive.", LineChart],
+  ["Automated Profitability Studies", "After an order closes, run the cost, fee, margin, fulfillment, and supplier review automatically.", LineChart],
   ["Reporting Systems", "Turn activity into operator-ready summaries and dashboards.", GitBranch],
   ["Follow-Up Orchestration", "Keep prospects, vendors, customers, and internal work moving automatically.", BellRing],
 ] as const;
