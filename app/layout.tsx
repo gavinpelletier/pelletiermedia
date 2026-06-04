@@ -17,9 +17,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Gavin Pelletier | Automation Systems",
+  title: "Gavin Pelletier | AI Engineer & Co-founder of Kolix AI",
   description:
-    "Independent automation operator and builder using OpenClaw to connect agents, workflows, data, and operational workflows.",
+    "AI engineer building custom agents that save companies time. Co-founder of Kolix AI — Discord agents, system integrations, and operational dashboards.",
 };
 
 export default function RootLayout({

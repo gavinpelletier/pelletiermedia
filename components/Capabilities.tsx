@@ -1,39 +1,39 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AlertCircle, GitPullRequestDraft, TimerReset } from "lucide-react";
+import { Bot, LayoutDashboard, Plug } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionBadge } from "@/components/SectionBadge";
 import { cardHover, revealVariants, staggerContainer } from "@/lib/animations";
 
-const problems = [
+const capabilities = [
   {
-    title: "Scattered Inputs",
-    copy: "Ideas, leads, messages, vendors, and tasks arrive from everywhere.",
-    icon: GitPullRequestDraft,
+    title: "Discord AI Agents",
+    copy: "Custom AI agents that live where your team already works. Built on OpenClaw, they handle questions, route tasks, and pull context from your existing systems.",
+    icon: Bot,
   },
   {
-    title: "Manual Decisions",
-    copy: "Important work depends on someone remembering, checking, routing, and following up.",
-    icon: AlertCircle,
+    title: "System Integrations",
+    copy: "Connect your AI agent to anything — project management, file storage, ERPs, email, CRMs. The agent becomes the interface between your team and your tools.",
+    icon: Plug,
   },
   {
-    title: "Execution Drag",
-    copy: "Progress slows because the system needs constant human babysitting.",
-    icon: TimerReset,
+    title: "Dashboards & UI",
+    copy: "When a chat interface isn't enough, I build custom dashboards and frontends for ERP systems, reporting, and operational visibility.",
+    icon: LayoutDashboard,
   },
 ];
 
-export function ProblemCards() {
+export function Capabilities() {
   return (
-    <section className="container-shell py-20" id="problem">
+    <section className="container-shell py-20" id="capabilities">
       <Reveal>
-        <SectionBadge>Problem</SectionBadge>
+        <SectionBadge>Capabilities</SectionBadge>
         <h2 className="headline max-w-3xl text-4xl leading-tight text-ink sm:text-5xl">
-          Moving fast breaks weak operations.
+          What I build.
         </h2>
         <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">
-          When your ideas, leads, tasks, vendors, data, and follow-ups live in scattered places, speed turns into chaos. The goal is not more tools. The goal is a system that turns context into action.
+          AI solutions that slot into how your team already operates — not another tool they have to learn.
         </p>
       </Reveal>
       <motion.div
@@ -43,7 +43,7 @@ export function ProblemCards() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {problems.map((item) => {
+        {capabilities.map((item) => {
           const Icon = item.icon;
           return (
             <motion.article

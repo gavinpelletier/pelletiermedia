@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Layers3 } from "lucide-react";
+import { ArrowRight, Bot } from "lucide-react";
 import { HeroNodeGraph } from "@/components/HeroNodeGraph";
 import { Reveal } from "@/components/Reveal";
 import { buttonPress } from "@/lib/animations";
@@ -12,31 +12,31 @@ export function Hero() {
       <div>
         <Reveal>
           <p className="mb-5 inline-flex items-center gap-2 rounded-xl border border-white/75 bg-white/50 px-3.5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-electric shadow-inset">
-            <Layers3 className="h-3.5 w-3.5" aria-hidden="true" />
-            Independent Automation Operator & Builder
+            <Bot className="h-3.5 w-3.5" aria-hidden="true" />
+            AI Engineer &amp; Co-founder, Kolix AI
           </p>
         </Reveal>
         <Reveal as="h1" className="headline max-w-4xl text-5xl leading-[0.98] text-ink sm:text-6xl lg:text-7xl">
-          Automation systems for people who move faster than their operations.
+          I build AI agents that save companies time.
         </Reveal>
         <Reveal className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-          I use OpenClaw to take in emails, tasks, orders, leads, and reports, check what needs to happen, and send the next step to the right place.
+          Custom AI solutions that plug into your existing tools — Discord, ClickUp, Google Drive, ERPs — and handle the repetitive work your team shouldn&apos;t be doing.
         </Reveal>
         <Reveal className="mt-8 flex flex-wrap gap-3">
           <motion.a
             className="focus-ring inline-flex items-center gap-2 rounded-full bg-blue-electric px-5 py-3 text-sm font-semibold text-white shadow-blue transition-colors hover:bg-ink"
-            href="#systems"
+            href="#work"
             whileTap={buttonPress}
           >
-            View Systems
+            View My Work
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </motion.a>
           <motion.a
             className="focus-ring inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/64 px-5 py-3 text-sm font-semibold text-ink shadow-tactile transition-colors hover:text-blue-electric"
-            href="#openclaw"
+            href="#contact"
             whileTap={buttonPress}
           >
-            See OpenClaw
+            Get In Touch
           </motion.a>
         </Reveal>
       </div>

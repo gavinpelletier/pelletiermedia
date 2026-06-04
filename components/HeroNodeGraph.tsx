@@ -45,7 +45,7 @@ export function HeroNodeGraph() {
             </p>
           </div>
           <div className="rounded-xl border border-white/75 bg-white/58 px-3 py-2 text-xs font-semibold text-muted shadow-inset">
-            OpenClaw
+            AI Agent
           </div>
         </div>
 
@@ -89,7 +89,7 @@ export function HeroNodeGraph() {
             <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-blue-electric shadow-inset">
               <ArrowRight className="h-6 w-6" aria-hidden="true" />
             </div>
-            <p className="headline text-3xl leading-none text-ink">OpenClaw</p>
+            <p className="headline text-3xl leading-none text-ink">AI Agent</p>
             <div className="mt-5 grid gap-2">
               {checks.map((item) => (
                 <span

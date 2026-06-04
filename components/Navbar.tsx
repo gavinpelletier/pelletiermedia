@@ -5,10 +5,9 @@ import { ArrowRight } from "lucide-react";
 import { buttonPress } from "@/lib/animations";
 
 const navLinks = [
-  { label: "Systems", href: "#systems" },
-  { label: "OpenClaw", href: "#openclaw" },
-  { label: "Activity", href: "#activity" },
-  { label: "Process", href: "#process" },
+  { label: "Work", href: "#work" },
+  { label: "Capabilities", href: "#capabilities" },
+  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -38,7 +37,7 @@ export function Navbar() {
           href="#contact"
           whileTap={buttonPress}
         >
-          Build With Me
+          Let&apos;s Talk
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </motion.a>
       </nav>
