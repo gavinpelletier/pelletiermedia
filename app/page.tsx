@@ -2,6 +2,7 @@ import { About } from "@/components/About";
 import { Capabilities } from "@/components/Capabilities";
 import { CaseStudy } from "@/components/CaseStudy";
 import { CTASection } from "@/components/CTASection";
+import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
 
@@ -14,6 +15,7 @@ export default function Home() {
       <Capabilities />
       <About />
       <CTASection />
+      <Footer />
     </main>
   );
 }

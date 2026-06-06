@@ -8,7 +8,7 @@ import { buttonPress } from "@/lib/animations";
 
 export function Hero() {
   return (
-    <section id="top" className="container-shell grid gap-10 pb-20 pt-14 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:pb-28 lg:pt-20">
+    <section id="top" className="container-shell scroll-mt-24 grid gap-10 pb-20 pt-14 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:pb-28 lg:pt-20">
       <div>
         <Reveal>
           <p className="mb-5 inline-flex items-center gap-2 rounded-xl border border-white/75 bg-white/50 px-3.5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-blue-electric shadow-inset">

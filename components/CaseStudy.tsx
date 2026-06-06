@@ -42,12 +42,15 @@ const stack = [
 
 export function CaseStudy() {
   return (
-    <section className="container-shell py-20" id="work">
+    <section className="container-shell scroll-mt-24 py-20" id="work">
       <Reveal>
         <SectionBadge>Case Study</SectionBadge>
         <h2 className="headline max-w-3xl text-4xl leading-tight text-ink sm:text-5xl">
           Manufacturing maintenance, automated.
         </h2>
+        <p className="mt-2 text-sm font-medium text-blue-electric">
+          Large custom wood flooring manufacturer — Southern California
+        </p>
         <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">
           Built an AI agent for a manufacturing facility that gives maintenance
           technicians instant access to machine manuals, task tracking, and
@@ -87,9 +90,11 @@ export function CaseStudy() {
 
           <h3 className="mt-8 text-xl font-semibold text-ink">The Result</h3>
           <p className="mt-3 leading-7 text-muted">
-            Technicians get answers in seconds instead of searching through
-            binders. Tasks get logged and tracked without leaving the chat.
-            Maintenance runs on a system, not memory.
+            Technicians get sourced answers in seconds instead of digging through
+            paper binders across a floor of heavy machinery. Preventive maintenance
+            tasks get logged, tracked, and surfaced automatically — no more chasing
+            down clipboards or relying on whoever happens to remember the last
+            service date. Maintenance runs on a system, not memory.
           </p>
         </motion.article>
 

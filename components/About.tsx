@@ -26,7 +26,7 @@ const highlights = [
 
 export function About() {
   return (
-    <section className="container-shell py-20" id="about">
+    <section className="container-shell scroll-mt-24 py-20" id="about">
       <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <Reveal>
           <SectionBadge>About</SectionBadge>

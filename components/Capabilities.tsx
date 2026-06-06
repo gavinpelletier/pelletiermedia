@@ -9,7 +9,7 @@ import { cardHover, revealVariants, staggerContainer } from "@/lib/animations";
 const capabilities = [
   {
     title: "Discord AI Agents",
-    copy: "Custom AI agents that live where your team already works. Built on OpenClaw, they handle questions, route tasks, and pull context from your existing systems.",
+    copy: "Custom AI agents that live where your team already works. They handle questions, route tasks, and pull context from your existing tools — so your team gets answers without switching apps.",
     icon: Bot,
   },
   {
@@ -26,7 +26,7 @@ const capabilities = [
 
 export function Capabilities() {
   return (
-    <section className="container-shell py-20" id="capabilities">
+    <section className="container-shell scroll-mt-24 py-20" id="capabilities">
       <Reveal>
         <SectionBadge>Capabilities</SectionBadge>
         <h2 className="headline max-w-3xl text-4xl leading-tight text-ink sm:text-5xl">

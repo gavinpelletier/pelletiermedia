@@ -7,7 +7,7 @@ import { buttonPress } from "@/lib/animations";
 
 export function CTASection() {
   return (
-    <section className="container-shell py-20" id="contact">
+    <section className="container-shell scroll-mt-24 py-20" id="contact">
       <Reveal className="overflow-hidden rounded-[2rem] bg-ink p-8 text-white shadow-[0_30px_80px_rgba(23,24,29,0.28)] sm:p-12">
         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
@@ -15,7 +15,7 @@ export function CTASection() {
               Get In Touch
             </p>
             <h2 className="headline max-w-3xl text-4xl leading-tight sm:text-6xl">
-              Have a workflow that needs fixing?
+              Running a team that&apos;s drowning in busywork?
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-white/72">
               Tell me about the repetitive work eating your team&apos;s time. I&apos;ll tell you if AI can solve it.
