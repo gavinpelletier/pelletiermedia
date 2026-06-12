@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Bot, FileSearch, ListChecks, MessageSquare } from "lucide-react";
 import {
   OrbitCardStack,
   type OrbitStackItem,
@@ -64,7 +63,7 @@ export function ProjectsSection() {
         </h2>
         <p className="mt-4 max-w-3xl text-lg leading-8 text-muted">
           Every agent I build stitches together the tools your team already uses.
-          Hover through the stack to explore each piece.
+          Each connection has a job: retrieve context, make the next action possible, or return the result to the team.
         </p>
         <div className="mt-2 flex items-center gap-2 text-sm text-muted">
           <span>Currently viewing:</span>

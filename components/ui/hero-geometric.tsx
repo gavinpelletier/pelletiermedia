@@ -1,21 +1,20 @@
 "use client";
 
-/* eslint-disable react/no-unknown-property */
 import { useRef, useMemo } from "react";
 import { Canvas, useFrame, ThreeElements } from "@react-three/fiber";
 import * as THREE from "three";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
-/* eslint-disable @typescript-eslint/no-namespace */
+/* eslint-disable @typescript-eslint/no-namespace, @typescript-eslint/no-empty-object-type */
 declare module "react" {
     namespace JSX {
-        // eslint-disable-next-line @typescript-eslint/no-empty-interface
         interface IntrinsicElements extends ThreeElements { }
     }
 }
-/* eslint-enable @typescript-eslint/no-namespace */
+/* eslint-enable @typescript-eslint/no-namespace, @typescript-eslint/no-empty-object-type */
 
 // --- Shader Code ---
 const vertexShader = `
@@ -176,9 +175,15 @@ const GradientPlane = ({
 // --- Main Component ---
 
 interface HeroGeometricProps {
+    eyebrow?: string;
     title1?: string;
     title2?: string;
     description?: string;
+    proofItems?: string[];
+    primaryHref?: string;
+    primaryLabel?: string;
+    secondaryHref?: string;
+    secondaryLabel?: string;
     className?: string; // Explicitly included
     color1?: string;
     color2?: string;
@@ -186,48 +191,69 @@ interface HeroGeometricProps {
 }
 
 export default function HeroGeometric({
+    eyebrow,
     title1,
     title2,
     description,
+    proofItems = [],
+    primaryHref,
+    primaryLabel,
+    secondaryHref,
+    secondaryLabel,
     color1 = "#3B82F6", // Default soft blue
     color2 = "#F0F9FF", // Default pale blue
     speed = 1,
     className,
 }: HeroGeometricProps) {
+    const prefersReducedMotion = useReducedMotion();
+
     return (
         <div
-            className={cn("relative w-full min-h-screen flex flex-col items-center overflow-hidden bg-white text-black", className)}
+            className={cn("relative flex min-h-[92vh] w-full flex-col items-center overflow-hidden bg-white text-black", className)}
             style={{ containerType: "size" }}
         >
-            {/* Background Shader */}
-            <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
-                <Canvas
-                    camera={{ position: [0, 0, 1] }}
-                    dpr={[1, 1]}
-                    gl={{
-                        antialias: false,
-                        alpha: true,
-                    }}
-                >
-                    <GradientPlane color1={color1} color2={color2} speed={speed} />
-                </Canvas>
-            </div>
+            {/* Background Shader: desktop motion flourish only; CSS fallback keeps mobile/reduced-motion cheap. */}
+            <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_18%_16%,rgba(37,99,235,0.16),transparent_32rem),linear-gradient(145deg,#ffffff,#f8fbff_52%,#edf5ff)] pointer-events-none" />
+            {!prefersReducedMotion && (
+                <div className="absolute left-0 top-0 z-0 hidden h-full w-full pointer-events-none md:block">
+                    <Canvas
+                        camera={{ position: [0, 0, 1] }}
+                        dpr={[1, 1]}
+                        gl={{
+                            antialias: false,
+                            alpha: true,
+                        }}
+                    >
+                        <GradientPlane color1={color1} color2={color2} speed={speed} />
+                    </Canvas>
+                </div>
+            )}
 
             {/* Content */}
             {(title1 || title2 || description) && (
-                <div className="relative z-10 w-full flex-1 flex flex-col items-center justify-center pt-8 pb-8 md:pt-20 md:pb-20">
-                    <div className="w-full max-w-[1200px] px-6 flex flex-col items-center">
-                        {/* Headline */}
-                        <div className="flex flex-col items-center text-center gap-2 md:gap-4 mb-8 md:mb-12">
+                <div className="relative z-10 flex w-full flex-1 flex-col items-center justify-center px-5 pb-12 pt-24 md:pb-20 md:pt-28">
+                    <div className="flex w-full max-w-[1220px] flex-col items-center">
+                        {eyebrow && (
+                            <motion.p
+                                initial={{ opacity: 0, y: 12 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
+                                className="mb-7 rounded-full border border-slate-900/10 bg-white/76 px-4 py-2 text-center text-xs font-semibold uppercase tracking-[0.18em] text-blue-700 shadow-sm"
+                            >
+                                {eyebrow}
+                            </motion.p>
+                        )}
+
+                        <div className="mb-7 flex flex-col items-center gap-2 text-center md:mb-9 md:gap-4">
                             {title1 && (
                                 <div className="overflow-hidden">
                                     <motion.h1
                                         initial={{ y: "100%", opacity: 0 }}
                                         animate={{ y: "0%", opacity: 1 }}
-                                        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-                                        className="text-[12cqi] md:text-[8cqi] lg:text-[6cqi] leading-[0.9] tracking-tighter text-[#131313]"
+                                        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.18 }}
+                                        className="max-w-[1100px] text-[12cqi] font-semibold leading-[0.9] tracking-[-0.055em] text-[#111827] md:text-[7.2cqi] lg:text-[5.7cqi]"
                                     >
-                                        <span className="font-serif italic font-light text-[#1a1a1a]">
+                                        <span className="font-serif italic font-light text-[#111827]">
                                             {title1}
                                         </span>
                                     </motion.h1>
@@ -238,8 +264,8 @@ export default function HeroGeometric({
                                     <motion.h1
                                         initial={{ y: "100%", opacity: 0 }}
                                         animate={{ y: "0%", opacity: 1 }}
-                                        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.35 }}
-                                        className="text-[12cqi] md:text-[8cqi] lg:text-[6cqi] leading-[0.9] tracking-tighter font-bold text-black"
+                                        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+                                        className="max-w-[1100px] text-[12cqi] font-bold leading-[0.9] tracking-[-0.055em] text-black md:text-[7.2cqi] lg:text-[5.7cqi]"
                                     >
                                         {title2}
                                     </motion.h1>
@@ -247,18 +273,52 @@ export default function HeroGeometric({
                             )}
                         </div>
 
-                        {/* Subheadline */}
                         {description && (
-                            <div className="max-w-[480px] text-center mb-8">
-                                <motion.p
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-                                    className="text-lg md:text-[1.35rem] leading-relaxed text-neutral-600 font-normal"
-                                >
-                                    {description}
-                                </motion.p>
-                            </div>
+                            <motion.p
+                                initial={{ opacity: 0, y: 18 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.75, delay: 0.5, ease: "easeOut" }}
+                                className="mb-8 max-w-[720px] text-center text-lg leading-8 text-slate-600 md:text-[1.28rem]"
+                            >
+                                {description}
+                            </motion.p>
+                        )}
+
+                        {(primaryHref || secondaryHref) && (
+                            <motion.div
+                                initial={{ opacity: 0, y: 16 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.65, delay: 0.62, ease: "easeOut" }}
+                                className="mb-8 flex flex-wrap justify-center gap-3"
+                            >
+                                {primaryHref && primaryLabel && (
+                                    <a className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_44px_rgba(37,99,235,0.24)] transition-colors hover:bg-slate-950" href={primaryHref}>
+                                        {primaryLabel}
+                                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                                    </a>
+                                )}
+                                {secondaryHref && secondaryLabel && (
+                                    <a className="inline-flex items-center gap-2 rounded-full border border-slate-900/12 bg-white/78 px-5 py-3 text-sm font-semibold text-slate-950 shadow-sm transition-colors hover:border-blue-600/35 hover:text-blue-700" href={secondaryHref}>
+                                        {secondaryLabel}
+                                    </a>
+                                )}
+                            </motion.div>
+                        )}
+
+                        {proofItems.length > 0 && (
+                            <motion.div
+                                initial={{ opacity: 0, y: 14 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.65, delay: 0.74, ease: "easeOut" }}
+                                className="grid w-full max-w-[980px] overflow-hidden rounded-2xl border border-slate-900/10 bg-white/78 text-left shadow-[0_24px_60px_rgba(15,23,42,0.08)] sm:grid-cols-2 lg:grid-cols-4"
+                            >
+                                {proofItems.map((item, index) => (
+                                    <div key={item} className="border-b border-slate-900/10 p-4 last:border-b-0 sm:border-r sm:last:border-r-0 lg:border-b-0">
+                                        <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-slate-500">0{index + 1}</p>
+                                        <p className="mt-1 text-sm font-semibold leading-5 text-slate-950">{item}</p>
+                                    </div>
+                                ))}
+                            </motion.div>
                         )}
                     </div>
                 </div>

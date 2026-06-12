@@ -17,7 +17,7 @@ export function Hero() {
           </p>
         </Reveal>
         <Reveal as="h1" className="headline max-w-4xl text-5xl leading-[0.98] text-ink sm:text-6xl lg:text-7xl">
-          I build AI agents that save companies time.
+          AI agents inside the tools your team already uses.
         </Reveal>
         <Reveal className="mt-6 max-w-2xl text-lg leading-8 text-muted">
           Custom AI solutions that plug into your existing tools — Discord, ClickUp, Google Drive, ERPs — and handle the repetitive work your team shouldn&apos;t be doing.
@@ -28,7 +28,7 @@ export function Hero() {
             href="#work"
             whileTap={buttonPress}
           >
-            View My Work
+            See the proof
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </motion.a>
           <motion.a
@@ -36,7 +36,7 @@ export function Hero() {
             href="#contact"
             whileTap={buttonPress}
           >
-            Get In Touch
+            Send a workflow
           </motion.a>
         </Reveal>
       </div>

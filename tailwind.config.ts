@@ -9,10 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        paper: "#f4f1eb",
-        porcelain: "#fbfaf7",
-        ink: "#17181d",
-        muted: "#666d78",
+        paper: "#f8fafc",
+        porcelain: "#ffffff",
+        ink: "#111827",
+        muted: "#5f6b7a",
         blue: {
           electric: "#2563eb",
           glow: "#5aa7ff",
@@ -24,9 +24,9 @@ const config: Config = {
       },
       boxShadow: {
         tactile:
-          "18px 18px 42px rgba(49, 54, 63, 0.13), -14px -14px 30px rgba(255, 255, 255, 0.92), inset 0 1px 0 rgba(255, 255, 255, 0.9)",
+          "0 24px 60px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.92)",
         inset:
-          "inset 8px 8px 18px rgba(66, 71, 80, 0.11), inset -8px -8px 18px rgba(255, 255, 255, 0.95)",
+          "inset 0 1px 0 rgba(255, 255, 255, 0.9)",
         blue: "0 18px 44px rgba(37, 99, 235, 0.24)",
       },
     },

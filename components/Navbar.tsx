@@ -37,7 +37,7 @@ export function Navbar() {
           href="#contact"
           whileTap={buttonPress}
         >
-          Let&apos;s Talk
+          Send Workflow
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </motion.a>
       </nav>

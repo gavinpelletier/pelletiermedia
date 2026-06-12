@@ -4,7 +4,7 @@ import { ScrollBasedVelocity } from "@/components/ui/scroll-based-velocity";
 
 export function VelocityDivider() {
   return (
-    <div className="overflow-hidden border-y border-black/5 bg-paper/50 py-8">
+    <div className="overflow-hidden border-y border-black/5 bg-white/60 py-8">
       <ScrollBasedVelocity
         text="AI AGENTS · AUTOMATION · SYSTEMS · DISCORD · OPENCLAW · ONYX · CLICKUP · INTEGRATIONS ·"
         default_velocity={3}

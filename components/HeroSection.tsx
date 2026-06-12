@@ -2,16 +2,29 @@
 
 import HeroGeometric from "@/components/ui/hero-geometric";
 
+const proofItems = [
+  "Manufacturing maintenance",
+  "Discord + Onyx + ClickUp",
+  "Sourced answers + task updates",
+  "Built and maintained by Kolix AI",
+];
+
 export function HeroSection() {
   return (
     <section id="top" className="scroll-mt-24">
       <HeroGeometric
-        title1="I build AI agents"
-        title2="that save companies time"
-        description="Custom AI solutions that plug into your existing tools — Discord, ClickUp, Google Drive, ERPs — and handle the repetitive work your team shouldn't be doing."
+        eyebrow="AI Engineer & Co-founder, Kolix AI"
+        title1="AI agents inside the tools"
+        title2="your team already uses."
+        description="Discord, ClickUp, Google Drive, ERPs, manuals, and task systems - connected into one working operator interface."
+        proofItems={proofItems}
+        primaryHref="#work"
+        primaryLabel="See the maintenance proof"
+        secondaryHref="mailto:gavin@kolix.ai"
+        secondaryLabel="Send a workflow"
         color1="#2563eb"
-        color2="#f0f6ff"
-        speed={0.8}
+        color2="#f8fbff"
+        speed={0.55}
       />
     </section>
   );

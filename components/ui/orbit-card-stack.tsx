@@ -1,5 +1,7 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element */
+
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import { motion, useReducedMotion, type Transition } from "framer-motion";
@@ -120,18 +122,18 @@ function Portrait({ item }: { item: OrbitStackItem }) {
   return (
     <div
       className="relative flex aspect-[1.36] w-full overflow-hidden rounded-[1.45rem] border border-black/[0.08] bg-black/[0.045]"
-      style={{ "--accent": item.accent ?? "#f3f1ea" } as CSSProperties}
+      style={{ "--accent": item.accent ?? "#dbeafe" } as CSSProperties}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_20%,var(--accent),transparent_24%),radial-gradient(circle_at_85%_72%,rgba(255,255,255,0.5),transparent_28%)] opacity-45" />
-      <div className="absolute inset-x-8 bottom-0 h-[72%] rounded-t-[999px] border-2 border-zinc-950 bg-[#f7f5ef]" />
-      <div className="absolute left-1/2 top-[22%] size-24 -translate-x-1/2 rounded-[45%_55%_48%_52%] border-2 border-zinc-950 bg-[#f5f2eb]">
+      <div className="absolute inset-x-8 bottom-0 h-[72%] rounded-t-[999px] border-2 border-zinc-950 bg-[#f8fbff]" />
+      <div className="absolute left-1/2 top-[22%] size-24 -translate-x-1/2 rounded-[45%_55%_48%_52%] border-2 border-zinc-950 bg-white">
         <div className="absolute left-1/2 top-[42%] h-2 w-10 -translate-x-1/2 rounded-full bg-zinc-950 opacity-80" />
         <div className="absolute left-[27%] top-[34%] size-2 rounded-full bg-zinc-950" />
         <div className="absolute right-[27%] top-[34%] size-2 rounded-full bg-zinc-950" />
         <div className="absolute left-1/2 top-[52%] h-6 w-4 -translate-x-1/2 rounded-b-full border-b-2 border-zinc-950" />
         <div
           className="absolute -top-5 left-1/2 h-9 w-24 -translate-x-1/2 rounded-t-full border-2 border-b-0 border-zinc-950"
-          style={{ backgroundColor: item.accent ?? "#f3f1ea" }}
+          style={{ backgroundColor: item.accent ?? "#dbeafe" }}
         />
       </div>
       <div className="absolute bottom-4 right-4 rounded-full bg-zinc-950 px-3 py-1 text-xs font-semibold tracking-[0.18em] text-white">
@@ -255,7 +257,7 @@ export function OrbitCardStack({
             <motion.article
               key={`${item.name}-${index}`}
               className={cn(
-                "absolute left-1/2 top-1/2 w-[min(78vw,21rem)] origin-bottom cursor-pointer rounded-[1.9rem] border border-black/10 bg-[#e9e6df] p-4 text-[#141414] outline-none",
+                "absolute left-1/2 top-1/2 w-[min(78vw,21rem)] origin-bottom cursor-pointer rounded-[1.9rem] border border-black/10 bg-white p-4 text-[#141414] outline-none",
                 "focus-visible:ring-2 focus-visible:ring-zinc-950/20 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
                 cardClassName,
               )}
