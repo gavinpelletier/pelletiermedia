@@ -80,16 +80,15 @@ export function SystemsSection() {
           Architecture
         </p>
         <h2 className="headline mt-2 max-w-3xl text-4xl leading-tight text-ink sm:text-5xl">
-          How the agent works.
+          Every agent shares the same proven structure.
         </h2>
         <p className="mt-4 max-w-3xl text-lg leading-8 text-muted">
-          Every AI agent I build follows a proven architecture — chat interface,
-          intelligent routing, knowledge indexing, tool connections, and
-          measurable output back to the user.
+          Chat interface, intelligent routing, knowledge index, tool connections, and 
+          measurable output back to the user — connected in a loop that operators can see and trust.
         </p>
       </div>
       <div className="container-shell mt-10">
-        <div className="tactile overflow-hidden rounded-[1.5rem] p-4 sm:p-8">
+        <div className="tactile overflow-hidden rounded-xl p-4 sm:p-8">
           <CircuitBoard
             nodes={agentNodes}
             connections={agentConnections}

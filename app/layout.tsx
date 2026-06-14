@@ -20,20 +20,20 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Gavin Pelletier | AI Engineer & Co-founder of Kolix AI",
+  title: "Gavin Pelletier | Custom AI Systems & Operational Software",
   description:
-    "AI engineer building custom agents that save companies time. Co-founder of Kolix AI — Discord agents, system integrations, and operational dashboards.",
+    "AI agents, technical-document tools, system integrations, and operator interfaces built for real business workflows.",
   openGraph: {
-    title: "Gavin Pelletier | AI Engineer & Co-founder of Kolix AI",
+    title: "Gavin Pelletier | Custom AI Systems & Operational Software",
     description:
-      "Custom AI agents that plug into your existing tools and handle the repetitive work your team shouldn't be doing.",
+      "AI agents, technical-document tools, system integrations, and operator interfaces built for real business workflows.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gavin Pelletier | AI Engineer & Co-founder of Kolix AI",
+    title: "Gavin Pelletier | Custom AI Systems & Operational Software",
     description:
-      "Custom AI agents that plug into your existing tools and handle the repetitive work your team shouldn't be doing.",
+      "AI agents, technical-document tools, system integrations, and operator interfaces built for real business workflows.",
   },
 };
 

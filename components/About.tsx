@@ -9,18 +9,18 @@ import { revealVariants, staggerContainer } from "@/lib/animations";
 const highlights = [
   {
     icon: Code2,
-    label: "Developer",
-    detail: "I build and ship production AI systems, not slide decks.",
+    label: "Builder",
+    detail: "Production software, from prototype through deployment and maintenance.",
   },
   {
     icon: Cpu,
-    label: "Co-founder",
-    detail: "Co-owner of Kolix AI, where we deploy custom AI into real businesses.",
+    label: "Integrator",
+    detail: "Agents connected to real documents, data, and the business systems your team already runs on.",
   },
   {
     icon: Rocket,
-    label: "Operator",
-    detail: "I care about whether the thing actually gets used, not just whether it works.",
+    label: "Operator-minded",
+    detail: "Designed around adoption, reliability, and clear human control — not AI hype.",
   },
 ];
 
@@ -31,24 +31,23 @@ export function About() {
         <Reveal>
           <SectionBadge>About</SectionBadge>
           <h2 className="headline max-w-3xl text-4xl leading-tight text-ink sm:text-5xl">
-            I build AI that people actually use.
+            I build the whole operational system.
           </h2>
           <div className="mt-6 space-y-4 text-lg leading-8 text-muted">
             <p>
-              I&apos;m Gavin Pelletier — a developer and co-owner of{" "}
-              <span className="font-semibold text-ink">Kolix AI</span>. We
-              develop, deploy, and maintain custom AI applications inside the
-              businesses we work with.
+              I'm Gavin Pelletier, an AI engineer and co-founder of{" "}
+              <span className="font-semibold text-ink">Kolix AI</span>. I design,
+              build, deploy, and maintain custom software for teams doing real
+              operational work.
             </p>
             <p>
-              Most of what I build are AI agents that live inside the tools a
-              team already uses — Discord, ClickUp, Google Drive, ERPs — and
-              remove the repetitive work that slows operations down.
+              That means combining AI with document retrieval, system
+              integrations, purpose-built tools, and a simple interface the team
+              can adopt without changing how the business runs.
             </p>
             <p>
-              I&apos;m not interested in building things that look good in a
-              demo. I build systems that maintenance techs, operators, and
-              managers actually rely on every day.
+              The standard isn't whether it works in a demo. It's whether
+              operators trust it, maintain it, and use it during a normal workday.
             </p>
           </div>
         </Reveal>
@@ -65,10 +64,10 @@ export function About() {
             return (
               <motion.article
                 key={item.label}
-                className="tactile flex items-start gap-4 rounded-[1.35rem] p-5"
+                className="tactile flex items-start gap-4 rounded-xl p-5"
                 variants={revealVariants}
               >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white text-blue-electric shadow-inset">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-blue-electric shadow-inset">
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </div>
                 <div>

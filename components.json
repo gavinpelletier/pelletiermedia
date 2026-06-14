@@ -22,6 +22,11 @@
     "hooks": "@/hooks"
   },
   "registries": {
-    "@componentry": "https://componentry.fun/r/{name}.json"
+    "@componentry": {
+      "url": "https://componentry.fun/r/{name}.json"
+    },
+    "@skiper-ui": {
+      "url": "https://skiper-ui.com/r/{name}.json"
+    }
   }
 }
